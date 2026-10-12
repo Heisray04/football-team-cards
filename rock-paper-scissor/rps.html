@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A simple game of Rock, Paper, and Scissor.">
+        <meta name="author" content="Raymond">
+        <title>Rock Paper Scissor game</title>
+        <link rel="stylesheet" href="rps.css">
+        <link rel="icon" href="../imgs/rock-paper-scissor.png">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Let's play Rock, Paper, and Scissor!</h1>
+        </header>
+        <main class="main-container">
+            <details>
+                <summary><b>Here are the rules</b></summary>
+                <p>The player has to click a button to select his choice.</p>
+                <p>A point is given for each win.</p>
+                <ul>
+                    <li>Rock smashes Scissor</li>
+                    <li>Scissor cuts Paper</li>
+                    <li>Paper covers Rock</li>
+                </ul>
+                <p>
+                    If the player's selection and the computer's selections are the same
+                (e.g., rock and rock), it's a tie and hence no point is given.
+                </p>
+                <p>First to reach 3 rounds wins.</p>
+                <p>Goodluck!</p>
+            </details>
+            <section class="score-board">
+                <div><b>Player Score: </b><span id="player-score">0</span></div>
+                <div><b>Computer Score: </b><span id="computer-score">0</span></div>
+            </section>
+            <section class="button-section">
+                <button class="btn" id="rock-btn">Rock</button>
+                <button class="btn" id="paper-btn">Paper</button>
+                <button class="btn" id="scissor-btn">Scissor</button>
+            </section>
+            <section class="feed-back">
+                <p id="feed-back"></p>
+                <p id="winner-msg"></p>
+            </section>
+            <section>
+                <button class="btn" id="restart">Restart</button>
+                <button class="btn" id="try-again">Try again</button>
+            </section>
+        </main>
+        <footer>&COPY; Rock, paper, and scissor. Created By Raymond.</footer>
+        <script src="rps.js"></script>
+    </body>
+
+</html>
+

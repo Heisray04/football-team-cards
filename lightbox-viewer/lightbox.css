@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: rgb(201, 196, 196);
+  font-size: 16px;
+}
+
+h2 {
+  background: rgb(132, 201, 226);
+  text-align: center;
+  padding: 0.3em;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+  padding: 0 1em;
+}
+
+.gallery-item {
+  width: 30%;
+  aspect-ratio: 1;
+  transition: transform 0.3s linear;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.06);
+}
+
+#close-btn {
+  font-size: 2.2em;
+  background: none;
+  color: rgb(233, 231, 231);
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+}
+
+.lightbox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(35, 34, 34, 0.9);
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-image {
+  width: 80%;
+  height: 90%;
+  max-width: 800px;
+}

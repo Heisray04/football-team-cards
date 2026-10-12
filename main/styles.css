@@ -1,0 +1,262 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-grey: #0a0a23;
+  --light-grey: #f5f6f7;
+  --white: #ffffff;
+  --black: #000;
+  --faint-blue: rgb(227, 227, 248);
+}
+
+body {
+  background-color: var(--dark-grey);
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title, .options-label, .team-metadata, footer {
+  color: var(--white);
+}
+
+.title { margin: 1.3rem 0; }
+.search-section { margin-bottom: 0.5rem; }
+
+#welcome-dialog[open] {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+}
+
+#welcome-dialog[open],
+.work-box, .for-each {
+  width: max(320px, 50%);
+  padding: 1rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 5px 3px rgb(241, 240, 240);
+  background: var(--light-grey);
+}
+
+a { text-decoration: none; }
+#welcome-dialog h2 { margin: 0.5rem 0;}
+#welcome-dialog::backdrop { background: rgba(20, 20, 20, 0.966) }
+
+#welcome-dialog p {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0.2rem;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#close-dialog {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  align-self: center;
+}
+
+#welcome-dialog:focus, #close-dialog:focus, a:focus,
+#welcome-dialog:active, #close-dialog:active, a:active {
+  border-color: goldenrod;
+  outline: none;
+}
+
+.input-search {
+  padding: 0.5rem 1rem;
+  width: 60%;
+  max-width: 600px;
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  outline: none;
+  background: var(--faint-blue);
+}
+
+.input-search:hover,
+.input-search:focus { border: 2px solid gold; }
+
+#search-btn, #view-work-btn, #close-dialog,
+#view-team-details-btn, #view-stadium-details-btn {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  background: linear-gradient(rgb(9, 9, 48), rgb(36, 36, 61));
+  color: var(--white);
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#search-btn:hover, #view-work-btn:hover,
+#close-dialog:hover, #view-team-details-btn:hover,
+#view-stadium-details-btn:hover {
+  background: linear-gradient(rgb(14, 14, 75), rgb(49, 49, 83)); 
+}
+
+#view-work-btn { padding: 0.2rem; font-size: 0.9rem; }
+#search-btn:active, #view-work-btn:active, 
+#view-team-details-btn:active,
+#view-stadium-details-btn:active { transform: translateY(-1px); }
+
+#search-btn:disabled, .input-search:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.search-section p {
+  color: var(--light-grey);
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+.other-works {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(35, 34, 34, 0.9);
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-box {
+  overflow: auto;
+  text-align: left;
+  line-height: 1.4;
+  height: min(400px, 60%);
+}
+
+.close-btn {
+  color: var(--white);
+  font-size: 2.2em;
+  margin-left: auto;
+  border: none;
+  background: none;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.close-btn:hover { color: rgba(255, 255, 255, 0.603); }
+.work-box ul, .work-box h2 { padding-left: 1rem;}
+
+.team-metadata {
+  display: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+}
+
+.for-each.stadium { display: flex; flex-direction: column; }
+.for-each.stadium img { aspect-ratio: 1; width: 100%; }
+
+.for-each .details {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.filter {
+  display: none;
+  margin-bottom: 0.5rem;
+}
+
+.options-label { font-size: 1.2rem; }
+#filter-box { padding: 0.2rem; background: var(--faint-blue); }
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-card {
+  background-color: var(--light-grey);
+  padding: 1.3rem;
+  margin: 1.2rem;
+  width: 300px;
+  border-radius: 15px;
+}
+
+.player-card:hover {
+  transform: scale(1.02);
+  background: #f5f6f7e0;
+  cursor: pointer;
+}
+
+.player-details {
+  height: 100%;
+  width: 100%;
+  display: none;
+  background: rgb(35, 34, 34, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  margin: auto -1rem -1rem;
+  background: rgb(70, 69, 69);
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .player-details .for-each {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .for-each .details {
+    padding: 0 0.5rem;
+    height: 100%;
+  }
+  .for-each.stadium img {
+    aspect-ratio: 1;
+    width: 70%;
+  }
+  .for-each.stadium .details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-metadata { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .team-metadata, .filter { text-align: left; }
+  #close-dialog { padding: 0.2rem 0.7rem; }
+  #welcome-dialog[open] { font-size: 0.9rem; }
+}

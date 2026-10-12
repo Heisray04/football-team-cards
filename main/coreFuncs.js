@@ -94,7 +94,7 @@ export async function retrieveClubPlayersData(inputName) {
     }
     return saveTeamInfo(squadInfo, squadInfo.team.name, inputName);
   } catch (e) {
-    helper.feedback.innerHTML = `${e.message} data!<br>Check your Network and try again.`;
+    helper.feedback.innerHTML = `Failed! ${e.message}`;
     return null;
   } finally {
     toggleButton();
@@ -115,7 +115,7 @@ export function verifyInput(inputName) {
     helper.feedback.textContent = 'Enter a club name!';
     return null;
   } else if (inputName.length <= 3) {
-    helper.feedback.textContent = 'Name too short!'
+    helper.feedback.textContent = 'Name too short!';
     return null;
   } else return true;
 }

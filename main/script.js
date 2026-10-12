@@ -22,7 +22,7 @@ domElement.otherWorksBox.addEventListener('click', (e) => {
 });
 
 async function display(input) {
-  input = input.trim().toLowerCase()
+  input = input.trim().toLowerCase();
   func.resetSearch();
   if (!func.verifyInput(input)) return;
   const result = await func.retrieveClubPlayersData(input);

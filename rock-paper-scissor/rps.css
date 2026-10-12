@@ -148,6 +148,7 @@ footer {
     margin: auto -1rem -1rem;
     background: rgb(100, 99, 99);
     padding: 1rem;
+    color: aliceblue;
 }
 
 @media (min-width: 768px) {

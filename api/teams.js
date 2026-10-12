@@ -6,5 +6,5 @@ export default async function handler(req, res) {
         { headers: { 'x-apisports-key': process.env.FOOTBALL_API_KEY} }
     );
     const data = result.json();
-    res.status(200).json(data);
+    res.status(200).json({ status: result.status, data: data });
 }

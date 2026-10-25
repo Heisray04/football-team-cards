@@ -34,9 +34,9 @@ Both functions keep a cache so repeated searches do not use up the API's request
 ## Project structure
 
 - `index.html` - the page
-- `main/` - front-end JavaScript (`domObjects.js`, `coreFuncs.js`, `apiHandlers.js`) and `styles.css`
+- `main/` - front-end JavaScript (`domObjects.js`, `coreFuncs.js`, `apiHandlers.js`, `script.js`) and `styles.css`
 - `api/` - the serverless functions
-- Other folders - my other practice projects
+- Other folder - contains my other practice projects
 
 ## Known limitations
 

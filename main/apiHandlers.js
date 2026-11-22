@@ -18,6 +18,7 @@ async function findTeamData(clubName) {
     try {
         res = await fetch(`${BASE}teams?search=${clubName}`);
     } catch (error) {
+        console.log(res);
         return 'error';
     }
     const result = await arrangeData(res);
@@ -38,8 +39,8 @@ async function getTeamCurrentPlayers(id) {
 export async function getPlayersData(clubName) {
     const teamData = await findTeamData(clubName);
     if (!teamData || teamData === 'error') return null;
-    const teamId = teamData.response.team.id
-    const teamPlayers = await getTeamCurrentPlayers(teamId)
+    const teamId = teamData.response.team.id;
+    const teamPlayers = await getTeamCurrentPlayers(teamId);
     if (!teamPlayers || teamPlayers === 'error') return null;
     teamPlayers.response["team details"] = teamData.response;
     return teamPlayers.response;

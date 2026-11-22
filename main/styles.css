@@ -208,12 +208,13 @@ a { text-decoration: none; }
   margin: 1.2rem;
   width: 300px;
   border-radius: 15px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .player-card:hover {
   transform: scale(1.02);
   background: #f5f6f7e0;
-  cursor: pointer;
 }
 
 .player-details {

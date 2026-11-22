@@ -87,6 +87,10 @@ export async function retrieveClubPlayersData(inputName) {
   helper.feedback.textContent = `Searching for result...`;
   toggleButton();
   try {
+    if (!navigator.onLine) {
+      alert('No Internet Connection.');
+      return;
+    }
     const squadInfo = await getPlayersData(inputName);
     if (!squadInfo || squadInfo.players.length === 0) {
       helper.feedback.textContent = `No result available.`;
@@ -122,6 +126,7 @@ export function verifyInput(inputName) {
 
 export function resetSearch() {
   helper.searchInput.value = '';
+  helper.selectBox.value = 'all';
   helper.searchInput.blur();
   helper.clubInfo.style.display = 'none';
   helper.positionField.style.display = 'none';
